@@ -5,15 +5,15 @@
 
 //global variables:
 //these will define the location of our spaceship
-var x = 160; //horizontal location
-var y = 120; // vertical location
+var x = 300; //horizontal location
+var y = 200; // vertical location
 var d = 100; // diameter
 var r = 0; // rotation
 var bodyColor = 200;
 var portholeColor = 0;
 
 function setup() {
-  createCanvas(320, 240);
+  createCanvas(600, 400);
 }
 
 function draw() {
@@ -23,9 +23,18 @@ function draw() {
   ufo(x, y, d, r); // call the ufo() function (see below)
   
   // add code here to change the ship location each frame
+  x += 2;
+  r += -.04; // spinnies
+  y += -2;
   
-  
-}
+  if(x > width){
+    x = 0;
+  }
+  if(y < 0){
+    y = height;
+  }
+
+  }
 
 function ufo(tempX, tempY, tempD, tempR){
   // this custom function takes care of drawing a complex shape
